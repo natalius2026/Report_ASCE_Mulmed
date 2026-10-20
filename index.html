@@ -45,6 +45,7 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 .sh{display:flex;gap:1.2rem;align-items:center;margin-bottom:1.6rem}
 .num{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:1.5rem;color:#fff;background:linear-gradient(135deg,var(--v),var(--c));border-radius:1rem;padding:.7rem .9rem}
 .sh h2{font-size:3.3rem;line-height:1.05}
+.sh p{color:var(--mut);font-size:1.3rem;font-weight:500;margin-top:.2rem}
 
 /* chart */
 .g2{display:grid;grid-template-columns:2.5fr 1fr;gap:1.4rem}
@@ -67,6 +68,12 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 .pc.sm .bt{font-size:1.3rem}.note{font-size:1.05rem;color:var(--mut);margin-top:.6rem;font-weight:500}
 .badge{display:inline-block;margin-top:.3rem;padding:.25rem .8rem;border-radius:99px;font-size:1rem;font-weight:700;background:var(--wbg);color:var(--wt)}
 .badge.ok{background:var(--okbg);color:var(--ok)}
+
+/* launch note */
+.launch{margin-top:1.4rem;padding:1.2rem 1.8rem;display:flex;align-items:center;gap:1.4rem}
+.launch .ic{width:5rem;height:5rem;border-radius:1.2rem;background:linear-gradient(160deg,#c026a3,#e5484d);color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.4rem;flex:none}
+.launch h3{font-size:1.6rem}
+.launch p{font-size:1.2rem;color:var(--mut);font-weight:500}
 
 /* story */
 .igrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
@@ -104,7 +111,7 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 </section>
 
 <section class="slide" id="s1" data-t="Registrasi">
-  <div class="sh"><div class="num">01</div><div><h2 class="serif">Rekapitulasi Registrasi Live</h2></div></div>
+  <div class="sh"><div class="num">01</div><div><h2 class="serif">Jumlah Pendaftar</h2></div></div>
   <div class="g2">
     <div class="card chartc"><div id="chart"></div>
       <div class="lg"><span><i style="background:#6d5dfc"></i>Pendaftar per hari</span><span><i style="background:#0b7a6d"></i>Total kumulatif</span><span><i class="r" style="background:#e5484d"></i>Sebar poster TK</span><span><i class="r" style="background:#c026a3"></i>Story IG &amp; WA</span></div></div>
@@ -126,6 +133,7 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 <section class="slide" id="s3" data-t="Story">
   <div class="sh"><div class="num">03</div><div><h2 class="serif">Jadwal Promosi Story</h2><p>Instagram Story dan WhatsApp Story · empat minggu penayangan.</p></div></div>
   <div class="igrow" id="ig"></div>
+  <div class="card launch"><div class="ic">✓</div><div><h3>Postingan Story IG &amp; WA sudah dilakukan</h3><p>Dimulai pada 8 Oktober 2026</p></div></div>
 </section>
 
 <script>
@@ -154,6 +162,7 @@ var POSTER=[
   {date:'2026-10-18',label:'18 Oktober 2026',done:false,schools:['TK Budi Dharma','TK Dewi Sartika','TK Harapan Bangsa']}
 ];
 var IG=[
+  {w:0,dates:'8 Oktober 2026',days:['2026-10-08'],start:'2026-10-08',done:true,g:'linear-gradient(160deg,#128c4a,#46d3bf)'},
   {w:1,dates:'18–19 Oktober',days:['2026-10-18','2026-10-19'],start:'2026-10-18',done:true,g:'linear-gradient(160deg,#6d5dfc,#a78bfa)'},
   {w:2,dates:'23–24 Oktober',days:['2026-10-23','2026-10-24'],start:'2026-10-23',done:false,g:'linear-gradient(160deg,#e5484d,#ffa07a)'},
   {w:3,dates:'30–31 Oktober',days:['2026-10-30','2026-10-31'],start:'2026-10-30',done:false,g:'linear-gradient(160deg,#0b9b89,#6ee7d3)'},
@@ -251,12 +260,13 @@ function igDone(w){return w.w in iState?iState[w.w]:w.done}
 function renderIG(){
   var d=0,next=null,h='';IG.forEach(function(w){if(igDone(w))d++;else if(!next)next=w});
   IG.forEach(function(w){var ok=igDone(w),now=next&&next.w===w.w,bars='';
-    for(var i=0;i<4;i++)bars+='<i class="'+(ok||i<w.w-1?'f':'')+'"></i>';
-    h+='<div class="card wk'+(ok?' done':'')+(now?' now':'')+'" data-w="'+w.w+'"><div class="tick">✓</div><div class="phone" style="--pg:'+w.g+'"><div class="bars">'+bars+'</div><div class="w"><small>WEEK</small>'+w.w+'</div></div><h3>Week '+w.w+'</h3><div class="dt">'+w.dates+'</div><div class="plat"><span class="ig">Instagram</span><span class="wa">WhatsApp</span></div><span class="badge '+(ok?'ok':'')+'">'+(ok?'✓ Sudah tayang':(now?'Berikutnya':'Terjadwal'))+'</span></div>'});
+    for(var i=0;i<4;i++)bars+='<i class="'+(ok||i<w.w?'f':'')+'"></i>';
+    var label=w.w===0?'Launch':('Week '+w.w);
+    h+='<div class="card wk'+(ok?' done':'')+(now?' now':'')+'" data-w="'+w.w+'"><div class="tick">✓</div><div class="phone" style="--pg:'+w.g+'"><div class="bars">'+bars+'</div><div class="w"><small>'+(w.w===0?'START':'WEEK')+'</small>'+(w.w===0?'1':w.w)+'</div></div><h3>'+label+'</h3><div class="dt">'+w.dates+'</div><div class="plat"><span class="ig">Instagram</span><span class="wa">WhatsApp</span></div><span class="badge '+(ok?'ok':'')+'">'+(ok?'✓ Sudah tayang':(now?'Berikutnya':'Terjadwal'))+'</span></div>'});
   $('ig').innerHTML=h;countTo($('kStory'),d);
 }
 $('ig').addEventListener('click',function(e){var c=e.target.closest?e.target.closest('.wk'):null;if(!c)return;
-  var w=IG[+c.getAttribute('data-w')-1];iState[w.w]=!igDone(w);save('sm_ig',iState);renderIG();if(ROWS.length)renderChart()});
+  var w=IG.filter(function(x){return x.w==+c.getAttribute('data-w')})[0];iState[w.w]=!igDone(w);save('sm_ig',iState);renderIG();if(ROWS.length)renderChart()});
 
 /* Nav dots */
 var secs=document.querySelectorAll('.slide'),dh='',dl=[];
