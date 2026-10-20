@@ -235,7 +235,7 @@ function renderChart(){
   $('stats').innerHTML='<div class="card st"><div class="l">Pendaftar pertama</div><div class="v mono">'+(first>=0?fd(first):'–')+'</div></div>'+
    '<div class="card st"><div class="l">Hari terbaik</div><div class="v mono">'+(bi>=0?fd(bi)+' <small>+'+best+'</small>':'–')+'</div></div>'+
    '<div class="card st"><div class="l">Rata-rata</div><div class="v mono">'+(run/n).toFixed(1).replace('.',',')+' <small>per hari</small></div></div>';
-  $('asof').textContent='Per '+t.getDate()+' '+MONL[t.getMonth()]+' '+t.getFullYear()+' · Hari ke-'+n+' sejak formulir dibuka';
+  $('asof').textContent='Per '+t.getDate()+' '+MONL[t.getMonth()]+' '+t.getFullYear()+' · Hari ke-'+n+' sejak pendaftaran dibuka';
 }
 function renderProfile(){
   var tot=ROWS.length,tk=tally(ROWS,function(r){var x=norm(r.i);return {k:x.k,l:x.l,raw:r.i}});
