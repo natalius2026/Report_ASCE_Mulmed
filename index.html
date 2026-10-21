@@ -66,14 +66,25 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 .bk i{display:block;height:100%;border-radius:99px;transform-origin:left;animation:grow 1.1s cubic-bezier(.2,.8,.2,1)}
 @keyframes grow{from{transform:scaleX(0)}}
 .pc.sm .bt{font-size:1.3rem}.note{font-size:1.05rem;color:var(--mut);margin-top:.6rem;font-weight:500}
-.badge{display:inline-block;margin-top:.3rem;padding:.25rem .8rem;border-radius:99px;font-size:1rem;font-weight:700;background:var(--wbg);color:var(--wt)}
-.badge.ok{background:var(--okbg);color:var(--ok)}
 
-/* launch note */
-.launch{margin-top:1.4rem;padding:1.2rem 1.8rem;display:flex;align-items:center;gap:1.4rem}
-.launch .ic{width:5rem;height:5rem;border-radius:1.2rem;background:linear-gradient(160deg,#c026a3,#e5484d);color:#fff;display:flex;align-items:center;justify-content:center;font-size:2.4rem;flex:none}
-.launch h3{font-size:1.6rem}
-.launch p{font-size:1.2rem;color:var(--mut);font-weight:500}
+/* poster */
+#s3{padding-top:1.8rem;padding-bottom:1.8rem}#s3 .sh{margin-bottom:1rem}
+.pbar{display:flex;align-items:center;gap:1.4rem;padding:.9rem 1.6rem;margin-bottom:1rem}
+.pbar .big{font-size:2.8rem;font-weight:700;line-height:1}.pb2{flex:1}.pbar .tx{font-size:1.3rem;font-weight:600;color:var(--mut)}
+.track{display:flex;gap:.25rem;height:1.2rem;margin-top:.4rem;border-radius:99px;overflow:hidden;background:#f0edf7}
+.track i{flex:1;background:#ddd7ee}.track i.on{background:linear-gradient(90deg,#0b9b89,#46d3bf)}
+.rail{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;margin-bottom:1rem}
+.rd{padding:.5rem .9rem;border-top:.4rem solid var(--dc);display:flex;align-items:center;justify-content:center;gap:.6rem;white-space:nowrap}
+.rd b{font-family:"JetBrains Mono",monospace;font-size:2rem;color:var(--dc);line-height:1}
+.rd .m{font-size:1.1rem;font-weight:700;color:var(--mut)}.rd .c{font-size:1.2rem;font-weight:700}
+.badge{display:inline-block;padding:.15rem .6rem;border-radius:99px;font-size:.95rem;font-weight:700;background:var(--wbg);color:var(--wt)}
+.badge.ok{background:var(--okbg);color:var(--ok)}
+.wall{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem}
+.wall li{display:flex;align-items:center;gap:.7rem;padding:.5rem .9rem;border:2px solid var(--line);border-left:.5rem solid var(--dc);border-radius:.9rem;cursor:pointer;background:#fff;user-select:none}
+.wall .ck{width:1.7rem;height:1.7rem;border-radius:50%;border:3px solid #cdc6e2;flex:none;display:flex;align-items:center;justify-content:center;font-size:1rem;color:transparent}
+.wall li.ok{background:#f0fbf6;border-color:#a9e3cc;border-left-color:var(--dc)}.wall li.ok .ck{background:var(--ok);border-color:var(--ok);color:#fff}
+.wall span{font-size:1.2rem;font-weight:600;line-height:1.15}
+@media(max-width:999px){.wall,.rail{grid-template-columns:1fr 1fr}}
 
 /* story */
 .igrow{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
@@ -89,8 +100,24 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 .wk.now{border:3px solid var(--v);box-shadow:0 0 0 .4rem rgba(109,93,252,.15),0 1rem 2.4rem rgba(109,93,252,.2)}
 .tick{position:absolute;top:.9rem;right:.9rem;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--ok);color:#fff;font-size:1.2rem;display:none;align-items:center;justify-content:center}
 .wk.done .tick{display:flex}
+.nx{margin-top:1.2rem;padding:1.2rem 1.8rem;display:flex;align-items:center;gap:1.4rem}
+.nx .cd{font-size:4rem;font-weight:700;line-height:1;background:linear-gradient(90deg,var(--v),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.nx h3{font-size:1.7rem}.nx p{font-size:1.2rem;color:var(--mut);font-weight:500}
 
-@media(max-width:999px){.slide{padding:2rem 1.2rem}.kpis,.igrow{grid-template-columns:1fr 1fr}.g2,.prof{grid-template-columns:1fr}h1{font-size:3.2rem}.dots{display:none}}
+[hidden]{display:none!important}
+.last{font-size:1.25rem;font-weight:700;color:var(--ink);background:#fff;border:2px solid var(--line);border-radius:99px;padding:.45rem 1.3rem}
+/* tiktok */
+.tt{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.ttc{display:flex;gap:1.6rem;padding:1.2rem;align-items:center}
+.frame{position:relative;width:16.5rem;aspect-ratio:9/16;flex:none;border-radius:1.8rem;overflow:hidden;border:.35rem solid #1c1b22;background:linear-gradient(160deg,rgba(37,244,238,.35),rgba(254,44,85,.3)),#f3f0fa;box-shadow:0 1rem 2.2rem rgba(60,50,120,.25)}
+.frame .ph{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:#1c1b22;font-weight:700;font-size:1.15rem;text-align:center;padding:1rem}
+.frame .ph b{font-size:3.6rem;line-height:1;text-shadow:.12rem .12rem 0 #25f4ee,-.12rem -.12rem 0 #fe2c55}
+.frame iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0;background:#fff}
+.ttc .info{min-width:0}.ttc .tag{display:inline-block;font-size:1rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,#c026a3,#e5484d);padding:.25rem .8rem;border-radius:99px}
+.ttc h3{font-size:1.6rem;margin:.7rem 0 .4rem;word-break:break-all}.ttc p{font-size:1.15rem;color:var(--mut);font-weight:500;margin-bottom:1rem}
+.ttc a{display:inline-block;background:#1c1b22;color:#fff;text-decoration:none;font-size:1.2rem;font-weight:700;padding:.7rem 1.4rem;border-radius:99px}
+@media(max-width:999px){.tt{grid-template-columns:1fr}.ttc{flex-direction:column}}
+@media(max-width:999px){.slide{padding:2rem 1.2rem}.kpis,.igrow{grid-template-columns:1fr 1fr}.g2,.prof,.days{grid-template-columns:1fr}h1{font-size:3.2rem}.dots{display:none}}
 @media(prefers-reduced-motion:reduce){.bk i{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -102,16 +129,16 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
   <h1 class="serif">Sie Multimedia<br><em>Progress Report</em></h1>
   <p class="lead">Jumlah pendaftar, penyebaran poster ke TK, dan jadwal promosi di Instagram Story dan di WhatsApp Story.</p>
   <div class="kpis">
-    <div class="card kpi" style="--g:#6d5dfc"><div class="l">Total Pendaftar</div><div class="n mono" id="kTotal">0</div><div class="s">sejak formulir dibuka</div></div>
+    <div class="card kpi" style="--g:#6d5dfc"><div class="l">Total Pendaftar</div><div class="n mono" id="kTotal">0</div><div class="s">sejak pendaftaran dibuka</div></div>
     <div class="card kpi" style="--g:#e5484d"><div class="l">Asal TK</div><div class="n mono" id="kTK">0</div><div class="s">sekolah berbeda</div></div>
-    <div class="card kpi" style="--g:#12b3a0"><div class="l">Poster Tersebar</div><div class="n mono" id="kPoster">0</div><div class="s">sekolah TK</div></div>
+    <div class="card kpi" style="--g:#12b3a0"><div class="l">Poster Tersebar</div><div class="n mono" id="kPoster">0</div><div class="s" id="kPosterS">PG/TK</div></div>
     <div class="card kpi" style="--g:#f5a524"><div class="l">Story Tayang</div><div class="n mono" id="kStory">0</div><div class="s">minggu promosi</div></div>
   </div>
-  <div class="livebar"><span class="pill demo" id="status"><i class="dot"></i><span id="statusTxt">Memuat…</span></span><span id="upd"></span><button class="rbtn" id="refresh" type="button">↻ Muat ulang</button></div>
+  <div class="livebar"><span class="last" id="last"></span><span class="pill off" id="status" hidden><i class="dot"></i><span id="statusTxt"></span></span><button class="rbtn" id="refresh" type="button">↻ Muat ulang</button></div>
 </section>
 
 <section class="slide" id="s1" data-t="Registrasi">
-  <div class="sh"><div class="num">01</div><div><h2 class="serif">Jumlah Pendaftar</h2></div></div>
+  <div class="sh"><div class="num">01</div><div><h2 class="serif">Rekapitulasi Registrasi Live</h2><p id="s1p"></p></div></div>
   <div class="g2">
     <div class="card chartc"><div id="chart"></div>
       <div class="lg"><span><i style="background:#6d5dfc"></i>Pendaftar per hari</span><span><i style="background:#0b7a6d"></i>Total kumulatif</span><span><i class="r" style="background:#e5484d"></i>Sebar poster TK</span><span><i class="r" style="background:#c026a3"></i>Story IG &amp; WA</span></div></div>
@@ -130,10 +157,22 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
   </div>
 </section>
 
-<section class="slide" id="s3" data-t="Story">
-  <div class="sh"><div class="num">03</div><div><h2 class="serif">Jadwal Promosi Story</h2><p>Instagram Story dan WhatsApp Story · empat minggu penayangan.</p></div></div>
+<section class="slide" id="s3" data-t="Poster">
+  <div class="sh"><div class="num">03</div><div><h2 class="serif">Jadwal Sebar Poster ke TK</h2><p>Sentuh nama sekolah untuk mengubah status.</p></div></div>
+  <div class="card pbar"><span class="big mono" id="pPct">0%</span><div class="pb2"><div class="tx" id="pTxt"></div><div class="track" id="pTrack"></div></div></div>
+  <div class="rail" id="rail"></div>
+  <ul class="wall" id="days"></ul>
+</section>
+
+<section class="slide" id="s4" data-t="Story">
+  <div class="sh"><div class="num">04</div><div><h2 class="serif">Jadwal Promosi Story</h2><p>Instagram Story dan WhatsApp Story · empat minggu penayangan.</p></div></div>
   <div class="igrow" id="ig"></div>
-  <div class="card launch"><div class="ic">✓</div><div><h3>Postingan Story IG &amp; WA sudah dilakukan</h3><p>Dimulai pada 8 Oktober 2026</p></div></div>
+  <div class="card nx" id="next"></div>
+</section>
+
+<section class="slide" id="s5" data-t="Referensi">
+  <div class="sh"><div class="num">05</div><div><h2 class="serif">Referensi Video Promosi</h2><p>Sentuh video untuk memutar.</p></div></div>
+  <div class="tt" id="tt"></div>
 </section>
 
 <script>
@@ -143,26 +182,28 @@ var CONFIG={
   // URL Google Apps Script (Web app) yang mengembalikan data TANPA info pribadi. Kosong = pakai snapshot di bawah.
   DATA_URL:'',
   LAUNCH:'2026-10-08',
-  AS_OF:'2026-10-20',
   REFRESH_SEC:60,
   // Penggabungan ejaan nama sekolah: kunci = nama huruf kecil tanpa awalan TK/KB/TKK dan tanpa spasi
   ALIAS:{petra5:'KB-TK Petra 5',kristusraja:'TK Kristus Raja'}
 };
-// Snapshot per 20 Okt 2026 (t=waktu, i=institusi, c=kelas, e=acara). Tanpa data pribadi.
+// Snapshot per 21 Okt 2026 (t=waktu, i=institusi, c=kelas, e=acara). Tanpa data pribadi.
 var SNAP=[
  {t:'2026-10-13 10:28:21',i:'KbtkPetra5',c:'TK B',e:'Storytelling “Cita-citaku”'},
  {t:'2026-10-17 06:25:09',i:'TKK KRISTUS RAJA',c:'TK B',e:'Storytelling “Cita-citaku”'},
  {t:'2026-10-17 16:14:48',i:'KB TKK Kristus Raja',c:'TK B',e:'Bento Creation'},
  {t:'2026-10-19 09:22:48',i:'TK Kristus Raja',c:'TK B',e:'Storytelling “Cita-citaku”'},
- {t:'2026-10-20 08:43:44',i:'TK Kristen Petra 11',c:'TK B',e:'Storytelling “Cita-citaku”'}
+ {t:'2026-10-20 08:43:44',i:'TK Kristen Petra 11',c:'TK B',e:'Storytelling “Cita-citaku”'},
+ {t:'2026-10-20 14:28:09',i:'TK Kristen Petra 1',c:'TK A',e:'Bento Creation'}
 ];
+// done:null = otomatis (dianggap selesai bila tanggalnya sudah lewat); true/false = pasti. Sentuh nama sekolah di layar untuk mengubah.
 var POSTER=[
   {date:'2026-10-13',label:'13 Oktober 2026',done:true,schools:['TK Baby Smile','TK Apple Tree','TK Permai','TK Town For Kids']},
-  {date:'2026-10-14',label:'14 Oktober 2026',done:true,schools:['TK Bintang Talenta','TK Godwins','TK Whiz Kids','TK Bahtera Kasih Bunda','TK Permata Ibu']},
-  {date:'2026-10-18',label:'18 Oktober 2026',done:false,schools:['TK Budi Dharma','TK Dewi Sartika','TK Harapan Bangsa']}
+  {date:'2026-10-14',label:'14 Oktober 2026',done:true,schools:['TK Bintang Talenta','TK Godwins','TK Whiz Kids','TK Bahtera Kasih Bunda','TK Permata Ibu','TK Don Bosco']},
+  {date:'2026-10-18',label:'18 Oktober 2026',done:null,schools:['TK Budi Dharma','TK Dewi Sartika','TK Harapan Bangsa']},
+  {date:'2026-10-20',label:'20 Oktober 2026',done:null,schools:['TK Elyon','TK Kinderland','TK Vita','TK Taman Ceria','TK Maria Montesori','TK Bunga Bangsa','TK Surabaya Montesori','TK Anak Bangsa','TK Little Sun']},
+  {date:'2026-10-21',label:'21 Oktober 2026',done:true,schools:['TK Victory','TK Anak Panah','TK Baby Smile Kenjeran','TK St. Lauren']}
 ];
 var IG=[
-  {w:0,dates:'8 Oktober 2026',days:['2026-10-08'],start:'2026-10-08',done:true,g:'linear-gradient(160deg,#128c4a,#46d3bf)'},
   {w:1,dates:'18–19 Oktober',days:['2026-10-18','2026-10-19'],start:'2026-10-18',done:true,g:'linear-gradient(160deg,#6d5dfc,#a78bfa)'},
   {w:2,dates:'23–24 Oktober',days:['2026-10-23','2026-10-24'],start:'2026-10-23',done:false,g:'linear-gradient(160deg,#e5484d,#ffa07a)'},
   {w:3,dates:'30–31 Oktober',days:['2026-10-30','2026-10-31'],start:'2026-10-30',done:false,g:'linear-gradient(160deg,#0b9b89,#6ee7d3)'},
@@ -181,9 +222,6 @@ function pdate(s){var m=String(s||'').match(/^(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;')}
 function countTo(el,to){var from=parseInt(el.getAttribute('data-v')||'0',10);el.setAttribute('data-v',to);var t0=null;
   function f(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/900),e=1-Math.pow(1-p,3);el.textContent=Math.round(from+(to-from)*e);if(p<1)requestAnimationFrame(f)}requestAnimationFrame(f)}
-
-/* "Hari ini" mengikuti tanggal laporan, bukan jam perangkat */
-var NOW=pdate(CONFIG.AS_OF)||new Date();
 
 /* Normalisasi nama TK: "KbtkPetra5", "TKK KRISTUS RAJA", "KB TKK Kristus Raja" -> satu sekolah */
 var PRE={kb:1,tk:1,tkk:1,kbtk:1,paud:1,ra:1,tkit:1};
@@ -204,7 +242,7 @@ function bars(arr,tot,max){var shown=arr.slice(0,max),rest=arr.slice(max).reduce
     return '<div class="br"><div class="bt"><span>'+esc(x.l)+'</span><span><b>'+x.n+'</b> <small>'+p+'%</small></span></div><div class="bk"><i style="width:'+p+'%;background:'+COL[i%6]+'"></i></div></div>'}).join('')||'<div class="note">Belum ada data</div>'}
 
 function renderChart(){
-  var L=pdate(CONFIG.LAUNCH),t=sod(NOW),n=Math.max(2,Math.round((t-L)/864e5)+1),cnt=[],cum=[],run=0,i,v;
+  var L=pdate(CONFIG.LAUNCH),t=sod(new Date()),n=Math.max(2,Math.round((t-L)/864e5)+1),cnt=[],cum=[],run=0,i,v;
   for(i=0;i<n;i++)cnt.push(0);
   ROWS.forEach(function(r){var k=Math.round((sod(r.d)-L)/864e5);if(k>=0&&k<n)cnt[k]++});
   cnt.forEach(function(c){run+=c;cum.push(run)});
@@ -227,7 +265,7 @@ function renderChart(){
   for(i=0;i<n;i++){var d=new Date(L.getFullYear(),L.getMonth(),L.getDate()+i),key=ymd(d);
     if(i%k===0||i===n-1){s+='<text x="'+X(i)+'" y="'+(y0+32)+'" text-anchor="middle" font-size="23" font-weight="700" fill="#1c1b22">'+d.getDate()+'</text>';
       if(i===0||d.getDate()===1)s+='<text x="'+X(i)+'" y="'+(y0+58)+'" text-anchor="middle" font-size="19" font-weight="600" fill="#55536a">'+MON[d.getMonth()]+'</text>'}
-    var p=pset[key];if(p)s+='<circle cx="'+X(i)+'" cy="'+ly1+'" r="12" fill="'+(p.done?'#e5484d':'#fff')+'" stroke="#e5484d" stroke-width="3.5"/>';
+    var p=pset[key];if(p)s+='<circle cx="'+X(i)+'" cy="'+ly1+'" r="12" fill="'+(gAll(p)?'#e5484d':'#fff')+'" stroke="#e5484d" stroke-width="3.5"/>';
     var w=sset[key];if(w&&d<=t)s+='<circle cx="'+X(i)+'" cy="'+ly2+'" r="12" fill="'+(igDone(w)?'#c026a3':'#fff')+'" stroke="#c026a3" stroke-width="3.5"/>'}
   $('chart').innerHTML=s+'</svg>';
   var best=0,bi=-1,first=-1;cnt.forEach(function(c,i){if(c>best){best=c;bi=i}if(c&&first<0)first=i});
@@ -235,6 +273,7 @@ function renderChart(){
   $('stats').innerHTML='<div class="card st"><div class="l">Pendaftar pertama</div><div class="v mono">'+(first>=0?fd(first):'–')+'</div></div>'+
    '<div class="card st"><div class="l">Hari terbaik</div><div class="v mono">'+(bi>=0?fd(bi)+' <small>+'+best+'</small>':'–')+'</div></div>'+
    '<div class="card st"><div class="l">Rata-rata</div><div class="v mono">'+(run/n).toFixed(1).replace('.',',')+' <small>per hari</small></div></div>';
+  $('s1p').textContent='Jumlah pendaftar sejak pendaftaran dibuka '+L.getDate()+' '+MONL[L.getMonth()]+' sampai hari ini (hari ke-'+n+').';
   $('asof').textContent='Per '+t.getDate()+' '+MONL[t.getMonth()]+' '+t.getFullYear()+' · Hari ke-'+n+' sejak pendaftaran dibuka';
 }
 function renderProfile(){
@@ -243,9 +282,11 @@ function renderProfile(){
   $('clsBars').innerHTML=bars(tally(ROWS,function(r){var c=(r.c||'Tidak diisi').trim().toUpperCase();return {k:c,l:c,raw:c}}),tot,4);
   $('evBars').innerHTML=bars(tally(ROWS,function(r){var e=(r.e||'Tidak diisi').trim();return {k:e,l:e,raw:e}}),tot,4);
 }
-function renderReg(){countTo($('kTotal'),ROWS.length);renderChart();renderProfile()}
+function renderReg(){countTo($('kTotal'),ROWS.length);renderChart();renderProfile();updateLast()}
 function ingest(list){ROWS=list.map(function(r){return {d:pdate(r.t),i:r.i,c:r.c,e:r.e}}).filter(function(r){return r.d});renderReg()}
-function setStatus(cls,txt){$('status').className='pill '+cls;$('statusTxt').textContent=txt;$('upd').textContent='Diperbarui '+new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})}
+function setStatus(cls,txt){$('statusTxt').textContent=txt;$('status').hidden=(cls!=='off')}
+function updateLast(){var m=null;ROWS.forEach(function(r){if(!m||r.d>m)m=r.d});
+  $('last').textContent=m?'Pendaftaran terakhir: '+m.getDate()+' '+MONL[m.getMonth()]+' '+m.getFullYear()+' · '+('0'+m.getHours()).slice(-2)+':'+('0'+m.getMinutes()).slice(-2)+' WIB':'Belum ada pendaftar'}
 function fetchData(){
   if(!CONFIG.DATA_URL){ingest(SNAP);setStatus('demo','Snapshot data · belum terhubung live');return}
   fetch(CONFIG.DATA_URL+(CONFIG.DATA_URL.indexOf('?')>-1?'&':'?')+'_='+Date.now()).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
@@ -254,19 +295,49 @@ function fetchData(){
     if(c){ingest(c);setStatus('off','Offline · menampilkan data tersimpan')}else{ingest(SNAP);setStatus('off','Gagal memuat · menampilkan snapshot')}});
 }
 
+/* Poster */
+var pState=load('sm_poster',{});
+var PCOL=['#6d5dfc','#e5484d','#0b9b89','#d98a00','#3b82f6'];
+function gDone(g){return g.done===null?g.date<ymd(new Date()):g.done}
+function sDone(g,s){var k=g.date+'|'+s;return k in pState?pState[k]:gDone(g)}
+function gAll(g){return g.schools.every(function(s){return sDone(g,s)})}
+function renderPoster(){
+  var tot=0,done=0,seg='',rail='',wall='';
+  POSTER.forEach(function(g,gi){var c=PCOL[gi%5],gd=0,dt=g.label.split(' ');
+    g.schools.forEach(function(s,si){tot++;var ok=sDone(g,s);if(ok){done++;gd++}seg+='<i class="'+(ok?'on':'')+'"></i>';
+      wall+='<li class="'+(ok?'ok':'')+'" style="--dc:'+c+'" data-g="'+gi+'" data-s="'+si+'"><div class="ck">✓</div><span>'+s+'</span></li>'});
+    var all=gd===g.schools.length;
+    rail+='<div class="card rd" style="--dc:'+c+'"><b>'+dt[0]+'</b><span class="m">'+dt[1].slice(0,3)+'</span><span class="c">'+gd+'/'+g.schools.length+'</span><span class="badge'+(all?' ok':'')+'">'+(all?'✓':'…')+'</span></div>'});
+  $('days').innerHTML=wall;$('rail').innerHTML=rail;$('pTrack').innerHTML=seg;
+  $('pPct').textContent=Math.round(100*done/tot)+'%';$('pTxt').textContent=done+' dari '+tot+' TK sudah menerima poster';
+  $('kPosterS').textContent='dari '+tot+' PG/TK';countTo($('kPoster'),done);
+}
+$('days').addEventListener('click',function(e){var li=e.target.closest?e.target.closest('li'):null;if(!li)return;
+  var g=POSTER[+li.getAttribute('data-g')],s=g.schools[+li.getAttribute('data-s')];pState[g.date+'|'+s]=!sDone(g,s);save('sm_poster',pState);renderPoster();if(ROWS.length)renderChart()});
+
 /* Story */
 var iState=load('sm_ig',{});
 function igDone(w){return w.w in iState?iState[w.w]:w.done}
 function renderIG(){
   var d=0,next=null,h='';IG.forEach(function(w){if(igDone(w))d++;else if(!next)next=w});
   IG.forEach(function(w){var ok=igDone(w),now=next&&next.w===w.w,bars='';
-    for(var i=0;i<4;i++)bars+='<i class="'+(ok||i<w.w?'f':'')+'"></i>';
-    var label=w.w===0?'Launch':('Week '+w.w);
-    h+='<div class="card wk'+(ok?' done':'')+(now?' now':'')+'" data-w="'+w.w+'"><div class="tick">✓</div><div class="phone" style="--pg:'+w.g+'"><div class="bars">'+bars+'</div><div class="w"><small>'+(w.w===0?'START':'WEEK')+'</small>'+(w.w===0?'1':w.w)+'</div></div><h3>'+label+'</h3><div class="dt">'+w.dates+'</div><div class="plat"><span class="ig">Instagram</span><span class="wa">WhatsApp</span></div><span class="badge '+(ok?'ok':'')+'">'+(ok?'✓ Sudah tayang':(now?'Berikutnya':'Terjadwal'))+'</span></div>'});
+    for(var i=0;i<4;i++)bars+='<i class="'+(ok||i<w.w-1?'f':'')+'"></i>';
+    h+='<div class="card wk'+(ok?' done':'')+(now?' now':'')+'" data-w="'+w.w+'"><div class="tick">✓</div><div class="phone" style="--pg:'+w.g+'"><div class="bars">'+bars+'</div><div class="w"><small>WEEK</small>'+w.w+'</div></div><h3>Week '+w.w+'</h3><div class="dt">'+w.dates+'</div><div class="plat"><span class="ig">Instagram</span><span class="wa">WhatsApp</span></div><span class="badge '+(ok?'ok':'')+'">'+(ok?'✓ Sudah tayang':(now?'Berikutnya':'Terjadwal'))+'</span></div>'});
   $('ig').innerHTML=h;countTo($('kStory'),d);
+  var n=$('next');
+  if(next){var p=next.start.split('-'),dd=Math.ceil((new Date(+p[0],+p[1]-1,+p[2])-sod(new Date()))/864e5);
+    n.innerHTML='<div class="cd mono">'+(dd>0?dd:0)+'</div><div><h3>'+(dd>0?'hari lagi menuju Week '+next.w:'Week '+next.w+' tayang hari ini')+'</h3><p>Posting Story pada '+next.dates+'</p></div>'}
+  else n.innerHTML='<div class="cd">🎉</div><div><h3>Semua minggu promosi sudah tayang</h3></div>';
 }
 $('ig').addEventListener('click',function(e){var c=e.target.closest?e.target.closest('.wk'):null;if(!c)return;
-  var w=IG.filter(function(x){return x.w==+c.getAttribute('data-w')})[0];iState[w.w]=!igDone(w);save('sm_ig',iState);renderIG();if(ROWS.length)renderChart()});
+  var w=IG[+c.getAttribute('data-w')-1];iState[w.w]=!igDone(w);save('sm_ig',iState);renderIG();if(ROWS.length)renderChart()});
+
+/* TikTok */
+var TIKTOK=[
+ {id:'7413313031049940230',handle:'@sekolahbudibakti.ofc',url:'https://www.tiktok.com/@sekolahbudibakti.ofc/video/7413313031049940230?q=promotional%20content%20video%20school&t=1792543434045'},
+ {id:'7582599026273455380',handle:'@euthymia9.2',url:'https://www.tiktok.com/@euthymia9.2/video/7582599026273455380?q=promotional%20content%20ideas&t=1792472072538'}
+];
+$('tt').innerHTML=TIKTOK.map(function(v,i){return '<div class="card ttc"><div class="frame"><div class="ph"><b>♪</b>Memuat video TikTok…</div><iframe src="https://www.tiktok.com/embed/v2/'+v.id+'" title="Video TikTok '+esc(v.handle)+'" loading="lazy" allow="fullscreen" allowfullscreen></iframe></div><div class="info"><span class="tag">Referensi '+(i+1)+'</span><h3>'+esc(v.handle)+'</h3><p>Video TikTok</p><a href="'+v.url+'" target="_blank" rel="noopener">Buka di TikTok ›</a></div></div>'}).join('');
 
 /* Nav dots */
 var secs=document.querySelectorAll('.slide'),dh='',dl=[];
@@ -276,9 +347,7 @@ if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es
   for(var j=0;j<secs.length;j++)io.observe(secs[j])}
 
 $('refresh').addEventListener('click',fetchData);
-var pdone=0;POSTER.forEach(function(g){if(g.done)pdone+=g.schools.length});
-countTo($('kPoster'),pdone);
-renderIG();fetchData();
+renderPoster();renderIG();fetchData();
 setInterval(fetchData,CONFIG.REFRESH_SEC*1000);
 })();
 </script>
