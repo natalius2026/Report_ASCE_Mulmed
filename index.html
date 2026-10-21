@@ -45,6 +45,7 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 .sh{display:flex;gap:1.2rem;align-items:center;margin-bottom:1.6rem}
 .num{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:1.5rem;color:#fff;background:linear-gradient(135deg,var(--v),var(--c));border-radius:1rem;padding:.7rem .9rem}
 .sh h2{font-size:3.3rem;line-height:1.05}
+#s1 .sh h2{font-size:2.6rem;line-height:1.15}
 .sh p{color:var(--mut);font-size:1.3rem;font-weight:500;margin-top:.2rem}
 
 /* chart */
@@ -138,7 +139,7 @@ h1 em{font-style:italic;background:linear-gradient(90deg,var(--v),var(--c));-web
 </section>
 
 <section class="slide" id="s1" data-t="Registrasi">
-  <div class="sh"><div class="num">01</div><div><h2 class="serif">Rekapitulasi Registrasi Live</h2><p id="s1p"></p></div></div>
+  <div class="sh"><div class="num">01</div><div><h2 class="serif" id="s1p">Jumlah pendaftar sejak pendaftaran dibuka 8 Oktober sampai hari ini (hari ke-14).</h2></div></div>
   <div class="g2">
     <div class="card chartc"><div id="chart"></div>
       <div class="lg"><span><i style="background:#6d5dfc"></i>Pendaftar per hari</span><span><i style="background:#0b7a6d"></i>Total kumulatif</span><span><i class="r" style="background:#e5484d"></i>Sebar poster TK</span><span><i class="r" style="background:#c026a3"></i>Story IG &amp; WA</span></div></div>
@@ -310,7 +311,7 @@ function renderPoster(){
     rail+='<div class="card rd" style="--dc:'+c+'"><b>'+dt[0]+'</b><span class="m">'+dt[1].slice(0,3)+'</span><span class="c">'+gd+'/'+g.schools.length+'</span><span class="badge'+(all?' ok':'')+'">'+(all?'✓':'…')+'</span></div>'});
   $('days').innerHTML=wall;$('rail').innerHTML=rail;$('pTrack').innerHTML=seg;
   $('pPct').textContent=Math.round(100*done/tot)+'%';$('pTxt').textContent=done+' dari '+tot+' TK sudah menerima poster';
-  $('kPosterS').textContent='dari '+tot+' PG/TK';countTo($('kPoster'),done);
+  countTo($('kPoster'),done);
 }
 $('days').addEventListener('click',function(e){var li=e.target.closest?e.target.closest('li'):null;if(!li)return;
   var g=POSTER[+li.getAttribute('data-g')],s=g.schools[+li.getAttribute('data-s')];pState[g.date+'|'+s]=!sDone(g,s);save('sm_poster',pState);renderPoster();if(ROWS.length)renderChart()});
